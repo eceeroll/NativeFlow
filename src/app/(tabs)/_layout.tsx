@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
-import { Colors } from "../../components/theme.js";
+import { Colors } from "../../components/theme/colors";
 
 const TABS = [
   { name: "home", label: "Home", icon: "⊞" },

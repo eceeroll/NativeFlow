@@ -33,9 +33,11 @@ export default function LevelSelection() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>What's your{"\n"}English level?</Text>
+      <Text style={styles.title}>What is your{"\n"}English level?</Text>
 
-      <Text style={styles.subtitle}>We'll personalise your learning path</Text>
+      <Text style={styles.subtitle}>
+        We will personalise your learning path
+      </Text>
 
       <View style={styles.list}>
         {LEVELS.map((level) => {
