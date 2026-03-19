@@ -7,35 +7,14 @@ import {
   StyleSheet,
   GestureResponderEvent,
   ViewStyle,
-  TextStyle,
-  StyleProp,
 } from "react-native";
 import { Label } from "./Typography";
 import { Colors } from "../theme/colors";
 import { Radius } from "../theme/radius";
 import { Spacing } from "../theme/spacing";
 import { Shadows } from "../theme/shadows";
-
-// ─── Types ───────────────────────────────────────────────────────────────
-
-type Variant = "primary" | "secondary" | "ghost" | "danger" | "accent";
-type Size = "sm" | "md" | "lg";
-
-interface ButtonProps {
-  variant?: Variant;
-  size?: Size;
-  label: string;
-  icon?: React.ReactNode;
-  iconRight?: React.ReactNode;
-  loading?: boolean;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  onPress?: (event: GestureResponderEvent) => void;
-  style?: ViewStyle;
-  labelStyle?: StyleProp<TextStyle>;
-}
-
-// ─── Button ──────────────────────────────────────────────────────────────
+import { Size, Variant } from "@/src/types/types";
+import { ButtonProps } from "@/src/types/interfaces";
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",

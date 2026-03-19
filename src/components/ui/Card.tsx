@@ -15,19 +15,9 @@ import { Spacing } from "../theme/spacing";
 import { Shadows } from "../theme/shadows";
 import { Heading, Body, Caption, Label, Highlight } from "./Typography";
 import Badge from "./Badge";
+import { ExpressionType, Difficulty } from "@/src/types/types";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
-
-// ─── Types ────────────────────────────────────────────────────────────────
-
-type ExpressionType =
-  | "idiom"
-  | "phrasalVerb"
-  | "slang"
-  | "collocation"
-  | "expression";
-
-type Difficulty = "beginner" | "intermediate" | "advanced";
 
 interface CardProps {
   children: ReactNode;

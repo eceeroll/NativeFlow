@@ -2,10 +2,7 @@ import { View } from "react-native";
 import { Text } from "../ui/Text";
 import { Radius } from "../theme/radius";
 import { Spacing } from "../theme/spacing";
-
-interface TopicCardProps {
-  title: string;
-}
+import { TopicCardProps } from "@/src/types/interfaces";
 
 export const TopicCard: React.FC<TopicCardProps> = ({ title }) => {
   return (

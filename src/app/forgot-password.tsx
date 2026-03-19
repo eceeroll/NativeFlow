@@ -1,4 +1,3 @@
-// app/forgot-password.tsx
 import { useState } from "react";
 import {
   View,

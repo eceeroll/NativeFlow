@@ -3,13 +3,7 @@ import { Text } from "../ui/Text";
 import Badge from "../ui/Badge";
 import { Radius } from "../theme/radius";
 import { Spacing } from "../theme/spacing";
-
-interface PackCardProps {
-  title: string;
-  count: number;
-  level: string;
-  progress?: number; // 0-1 for progress bar
-}
+import { PackCardProps } from "@/src/types/interfaces";
 
 export const PackCard: React.FC<PackCardProps> = ({
   title,

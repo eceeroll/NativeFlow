@@ -1,11 +1,5 @@
+import { CATEGORIES } from "@/src/constants/consts";
 import { View, Text, StyleSheet, Pressable } from "react-native";
-
-const categories = [
-  { icon: "💬", title: "Daily Conversation", color: "#3B82F6" },
-  { icon: "💼", title: "Business English", color: "#8B5CF6" },
-  { icon: "🌍", title: "Travel English", color: "#10B981" },
-  { icon: "👋", title: "Greetings", color: "#F59E0B" },
-];
 
 export default function HomeScreen() {
   return (
@@ -53,7 +47,7 @@ export default function HomeScreen() {
 
       <Text style={styles.subheading2}>Expression Packs</Text>
       <View style={styles.categories}>
-        {categories.map((item) => (
+        {CATEGORIES.map((item) => (
           <View key={item.title} style={styles.categoryCard}>
             <Text
               style={[

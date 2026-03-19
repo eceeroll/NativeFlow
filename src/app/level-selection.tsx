@@ -6,27 +6,7 @@ import {
 import { useState } from "react";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-
-const LEVELS = [
-  {
-    id: "beginner",
-    title: "Beginner",
-    subtitle: "Learning basics & simple phrases",
-    icon: "🌱",
-  },
-  {
-    id: "intermediate",
-    title: "Intermediate",
-    subtitle: "Can hold conversations, want to sound natural",
-    icon: "⚡",
-  },
-  {
-    id: "advanced",
-    title: "Advanced",
-    subtitle: "Fluent, polishing idioms & nuance",
-    icon: "🎯",
-  },
-];
+import { LEVELS } from "../constants/data";
 
 export default function LevelSelection() {
   const [selected, setSelected] = useState("intermediate");

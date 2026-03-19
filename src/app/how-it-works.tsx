@@ -1,4 +1,3 @@
-// app/how-it-works.tsx
 import { useEffect, useRef, useState } from "react";
 import {
   View,
@@ -11,38 +10,10 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { EXPRESSIONS } from "../constants/data";
+import { CARD_HOLD_MS, SWIPE_OUT_MS } from "../constants/consts";
 
 const { width: W } = Dimensions.get("window");
-
-const EXPRESSIONS = [
-  {
-    type: "Expression",
-    typeColor: "#5B4FE9",
-    typeBg: "#EEF0FF",
-    emoji: "🎯",
-    phrase: "Break the ice",
-    meaning: "Start a conversation in a friendly way",
-  },
-  {
-    type: "Idiom",
-    typeColor: "#7C3AED",
-    typeBg: "#EDE9FE",
-    emoji: "🌊",
-    phrase: "Go with the flow",
-    meaning: "Accept things as they happen naturally",
-  },
-  {
-    type: "Slang",
-    typeColor: "#FF6B4A",
-    typeBg: "#FFF0ED",
-    emoji: "🔥",
-    phrase: "That's lit",
-    meaning: "Something exciting or excellent",
-  },
-];
-
-const CARD_HOLD_MS = 2800;
-const SWIPE_OUT_MS = 380;
 
 export default function HowItWorks() {
   const [index, setIndex] = useState(0);

@@ -3,12 +3,7 @@ import { Text } from "../ui/Text";
 import Badge from "../ui/Badge";
 import { Radius } from "../theme/radius";
 import { Spacing } from "../theme/spacing";
-
-interface ExpressionCardProps {
-  expression: string;
-  meaning: string;
-  tag: string;
-}
+import { ExpressionCardProps } from "@/src/types/interfaces";
 
 export const ExpressionCard: React.FC<ExpressionCardProps> = ({
   expression,

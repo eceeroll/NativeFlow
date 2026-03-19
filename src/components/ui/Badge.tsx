@@ -1,5 +1,3 @@
-// NativeFlow — Badge.tsx (UPDATED)
-
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Text } from "./Text";
@@ -7,34 +5,12 @@ import { Colors } from "../theme/colors";
 import { Radius } from "../theme/radius";
 import { Shadows } from "../theme/shadows";
 import { Spacing } from "../theme/spacing";
-
-// ─────────────────────────────────────────────────────────────
-// TYPES
-// ─────────────────────────────────────────────────────────────
-
-type BadgeProps = {
-  type?: keyof typeof typeConfig;
-  label?: string;
-  size?: "sm" | "md";
-  style?: any;
-};
-
-type StatusBadgeProps = {
-  status?: keyof typeof statusConfig;
-  style?: any;
-};
-
-type XPBadgeProps = {
-  xp?: number;
-  style?: any;
-};
-
-type PillProps = {
-  label?: string;
-  active?: boolean;
-  onPress?: () => void;
-  style?: any;
-};
+import {
+  BadgeProps,
+  StatusBadgeProps,
+  XPBadgeProps,
+  PillProps,
+} from "@/src/types/types";
 
 // ─────────────────────────────────────────────────────────────
 // MAIN BADGE

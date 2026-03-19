@@ -2,14 +2,7 @@ import React from "react";
 import { Text as RNText } from "react-native";
 import { Typography } from "../theme/typography";
 import { Colors } from "../theme/colors";
-
-type RNTextProps = {
-  variant?: "title" | "subtitle" | "caption";
-  color?: string;
-  style?: any;
-  children?: React.ReactNode;
-  [key: string]: any;
-};
+import { RNTextProps } from "@/src/types/types";
 
 export const Text: React.FC<RNTextProps> = ({
   variant = "subtitle",

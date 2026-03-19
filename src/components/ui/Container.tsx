@@ -11,20 +11,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "../theme/colors";
 import { Spacing } from "../theme/spacing";
-
-// ─── Types ───────────────────────────────────────────────────────────────
-
-interface ScreenProps {
-  children: React.ReactNode;
-  scrollable?: boolean;
-  padded?: boolean;
-  centered?: boolean;
-  backgroundColor?: string;
-  style?: ViewStyle;
-  contentStyle?: ViewStyle;
-}
-
-// ─── Screen ──────────────────────────────────────────────────────────────
+import { ScreenProps } from "@/src/types/interfaces";
 
 export const Screen: React.FC<ScreenProps> = ({
   children,

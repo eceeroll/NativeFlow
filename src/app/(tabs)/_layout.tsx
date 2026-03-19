@@ -1,14 +1,7 @@
 import { Tabs } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "../../components/theme/colors";
-
-const TABS = [
-  { name: "home", label: "Home", icon: "⊞" },
-  { name: "discover", label: "Discover", icon: "◎" },
-  { name: "saved", label: "Saved", icon: "⊡" },
-  { name: "progress", label: "Progress", icon: "↗" },
-  { name: "profile", label: "Profile", icon: "◯" },
-];
+import { TABS } from "@/src/constants/consts";
 
 export default function TabLayout() {
   return (

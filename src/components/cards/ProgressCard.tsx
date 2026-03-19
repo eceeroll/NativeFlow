@@ -4,12 +4,7 @@ import Button from "../ui/Button";
 import { Colors } from "../theme/colors";
 import { Radius } from "../theme/radius";
 import { Spacing } from "../theme/spacing";
-
-interface ProgressCardProps {
-  progress: number;
-  total: number;
-  onStart?: () => void;
-}
+import { ProgressCardProps } from "@/src/types/interfaces";
 
 export const ProgressCard: React.FC<ProgressCardProps> = ({
   progress,
