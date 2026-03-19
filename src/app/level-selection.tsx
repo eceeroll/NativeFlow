@@ -1,7 +1,11 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import { useState } from "react";
 import { router } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 const LEVELS = [
   {
@@ -26,61 +30,99 @@ const LEVELS = [
 
 export default function LevelSelection() {
   const [selected, setSelected] = useState("intermediate");
+  const insets = useSafeAreaInsets();
 
   const handleContinue = () => {
-    router.replace("/(tabs)/home");
+    router.push("/daily-goal"); // 🔥 replace değil push
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>What is your{"\n"}English level?</Text>
+    <View style={styles.root}>
+      <SafeAreaView style={styles.safe}>
+        {/* 🔥 Back Button */}
+        <Pressable
+          onPress={() => {
+            if (router.canGoBack()) {
+              router.back();
+            } else {
+              router.push("/");
+            }
+          }}
+          style={[styles.backBtn, { top: insets.top + 8 }]}
+          hitSlop={12}
+        >
+          <Ionicons name="arrow-back" size={22} color="#1A1228" />
+        </Pressable>
 
-      <Text style={styles.subtitle}>
-        We will personalise your learning path
-      </Text>
+        {/* Content */}
+        <View style={styles.content}>
+          <Text style={styles.title}>What is your{"\n"}English level?</Text>
 
-      <View style={styles.list}>
-        {LEVELS.map((level) => {
-          const active = selected === level.id;
+          <Text style={styles.subtitle}>
+            We will personalise your learning path
+          </Text>
 
-          return (
-            <Pressable
-              key={level.id}
-              onPress={() => setSelected(level.id)}
-              style={[styles.card, active && styles.cardActive]}
-            >
-              <Text style={styles.icon}>{level.icon}</Text>
+          <View style={styles.list}>
+            {LEVELS.map((level) => {
+              const active = selected === level.id;
 
-              <View style={styles.textWrap}>
-                <Text style={styles.cardTitle}>{level.title}</Text>
+              return (
+                <Pressable
+                  key={level.id}
+                  onPress={() => setSelected(level.id)}
+                  style={[styles.card, active && styles.cardActive]}
+                >
+                  <Text style={styles.icon}>{level.icon}</Text>
 
-                <Text style={styles.cardSubtitle}>{level.subtitle}</Text>
-              </View>
+                  <View style={styles.textWrap}>
+                    <Text style={styles.cardTitle}>{level.title}</Text>
+                    <Text style={styles.cardSubtitle}>{level.subtitle}</Text>
+                  </View>
 
-              {active && <Text style={styles.check}>✓</Text>}
-            </Pressable>
-          );
-        })}
-      </View>
+                  {active && <Text style={styles.check}>✓</Text>}
+                </Pressable>
+              );
+            })}
+          </View>
 
-      <Pressable style={styles.continueBtn} onPress={handleContinue}>
-        <Text style={styles.continueText}>Continue</Text>
-      </Pressable>
-    </SafeAreaView>
+          <Pressable style={styles.continueBtn} onPress={handleContinue}>
+            <Text style={styles.continueText}>Continue</Text>
+          </Pressable>
+        </View>
+      </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
     backgroundColor: "#F7F7FB",
-    padding: 24,
+  },
+
+  safe: {
+    flex: 1,
+    paddingHorizontal: 24,
+  },
+
+  content: {
+    flex: 1,
+    justifyContent: "center", // 🔥 sadece content ortalı
+  },
+
+  backBtn: {
+    position: "absolute",
+    left: 24,
+    width: 40,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 10,
   },
 
   title: {
     fontSize: 34,
     fontWeight: "800",
-    marginTop: 20,
     marginBottom: 10,
   },
 

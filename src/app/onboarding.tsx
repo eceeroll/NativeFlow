@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Onboarding() {
   const handleStart = async () => {
     await AsyncStorage.setItem("hasOnboarded", "true");
-    router.replace("/level-selection");
+    router.push("/how-it-works" as any);
   };
 
   return (
@@ -34,7 +34,10 @@ export default function Onboarding() {
             <Text style={styles.primaryText}>Get Started</Text>
           </Pressable>
 
-          <Pressable style={styles.secondaryBtn}>
+          <Pressable
+            style={styles.secondaryBtn}
+            onPress={() => router.replace("/login")}
+          >
             <Text style={styles.secondaryText}>
               Already have an account? Sign in
             </Text>
